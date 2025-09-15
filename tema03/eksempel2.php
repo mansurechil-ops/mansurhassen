@@ -1,13 +1,16 @@
-<?php     /* Eksempel 2 */
+<?php     /* Eksempel 3 */
 /*
-/*    Programmet skriver ut tallene fra 1 til 10 p� hver sin linje
-/*    Eksempelet viser bruk av while-setning
+/*    Programmet legger inn 3 navn i et array
+/*    Programmet skriver ut de 3 navnene
 */
-  $tall=1;  
+  $navn=array("Geir","Marius","Tove");  
 
-  while ($tall<=10)
+  print("Det første navnet er $navn[0]<br/>");
+
+  print("Alle navnene er <br/> ");
+
+  for ($nr=0;$nr<count($navn);$nr++)
     {
-      print("$tall <br/>"); 
-      $tall++;  
+      print("$navn[$nr] <br/>");   
     }
 ?>
