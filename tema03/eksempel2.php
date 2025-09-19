@@ -1,7 +1,7 @@
-<?php     /* Eksempel 3 */
+<?php     /* Eksempel 2 */
 /*
-/*    Programmet legger inn 3 navn i et array
-/*    Programmet skriver ut de 3 navnene
+/*    Programmet legger inn 2 navn i et array
+/*    Programmet skriver ut de 2 navnene
 */
   $navn=array("Geir","Marius","Tove");  
 
