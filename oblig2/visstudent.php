@@ -25,9 +25,12 @@ if (isset($_POST['visstudentknapp'])) {
     $res = mysqli_query($db, $sql) or die("ikke mulig &aring; hente data fra databasen");
     if ($rad = mysqli_fetch_assoc($res)) {
         print("<h4>Valgt student</h4>");
-        print("<table border=1>");
-        print("<tr><th align=left>brukernavn</th><th align=left>fornavn</th><th align=left>etternavn</th><th align=left>klassekode</th></tr>");
-        print("<tr><td>{$rad['brukernavn']}</td><td>{$rad['fornavn']}</td><td>{$rad['etternavn']}</td><td>{$rad['klassekode']}</td></tr>");
+        print("<table class='data-table'>");
+        print("<caption>Valgt student</caption>");
+        print("<thead><tr><th scope='col'>brukernavn</th><th scope='col'>fornavn</th><th scope='col'>etternavn</th><th scope='col'>klassekode</th></tr></thead>");
+        print("<tbody>");
+        print("<tr><td>" . htmlspecialchars($rad['brukernavn']) . "</td><td>" . htmlspecialchars($rad['fornavn']) . "</td><td>" . htmlspecialchars($rad['etternavn']) . "</td><td>" . htmlspecialchars($rad['klassekode']) . "</td></tr>");
+        print("</tbody>");
         print("</table>");
     } else {
         print("Fant ingen student med brukernavn $brukernavn");
@@ -35,4 +38,3 @@ if (isset($_POST['visstudentknapp'])) {
 }
 include("slutt.html");
 ?>
-

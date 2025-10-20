@@ -11,8 +11,10 @@ $sqlResultat = mysqli_query($db, $sqlSetning) or die("ikke mulig &aring; hente d
 
 $antallRader = mysqli_num_rows($sqlResultat); // antall rader i resultatet beregnet
 print("<h3>Registrerte klasser </h3>");
-print("<table border=1>");
-print("<tr><th align=left>klassekode</th> <th align=left>klassenavn</th> <th align=left>studiumkode</th></tr>");
+print("<table class='data-table'>");
+print("<caption>Registrerte klasser</caption>");
+print("<thead><tr><th scope='col'>klassekode</th><th scope='col'>klassenavn</th><th scope='col'>studiumkode</th></tr></thead>");
+print("<tbody>");
 for ($r = 1; $r <= $antallRader; $r++) {
     $rad = mysqli_fetch_array($sqlResultat); // ny rad hentet fra spørringsresultatet
     $klassekode = $rad["klassekode"];
@@ -20,6 +22,7 @@ for ($r = 1; $r <= $antallRader; $r++) {
     $studiumkode = $rad["studiumkode"];
     print("<tr><td>$klassekode</td><td>$klassenavn</td><td>$studiumkode</td></tr>");
 }
+print("</tbody>");
 print("</table>");
 include("slutt.html");
 ?>
