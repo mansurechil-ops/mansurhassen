@@ -1,7 +1,7 @@
 <?php /* slett-klasse */
 /*
-/* Programmet lager et skjema for å kunne slette et klasse
-/* Programmet sletter det valgte studiet
+/* Programmet lager et skjema for å kunne slette en klasse
+/* Programmet sletter den valgte klassen
 */
 include("start.html");
 ?>
@@ -24,14 +24,20 @@ include("start.html");
 if (isset($_POST["slettklasseKnapp"])) {
     include("dbtilkobling.php");
     $klassekode = $_POST["klassekode"];
-    $sqlSetning = "DELETE FROM klasse WHERE klassekode='$klassekode';";
 
-    try {
-        mysqli_query($db, $sqlSetning);
-        print("Følgende klasse er nå slettet: $klassekode <br />");
-    } catch (mysqli_sql_exception $e) {
-        print("Du må slette studentene i klassen $klassekode før du kan slette klassen.<br />");
+    // Sjekk om klassen har studenter først
+    $sjekkSql = "SELECT COUNT(*) AS antall FROM student WHERE klassekode='$klassekode'";
+    $sjekkRes = mysqli_query($db, $sjekkSql) or die("ikke mulig &aring; hente data fra databasen");
+    $rad = mysqli_fetch_assoc($sjekkRes);
+
+    if ((int)$rad['antall'] > 0) {
+        print("Du m&aring; slette studentene i klassen $klassekode f&oslash;r du kan slette klassen.<br />");
+    } else {
+        $sqlSetning = "DELETE FROM klasse WHERE klassekode='$klassekode';";
+        mysqli_query($db, $sqlSetning) or die("ikke mulig &aring; slette data i databasen");
+        print("F&oslash;lgende klasse er n&aring; slettet: $klassekode <br />");
     }
 }
 include("slutt.html");
 ?>
+

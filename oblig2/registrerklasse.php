@@ -27,7 +27,7 @@ if (isset($_POST["registrerklasseknapp"]))
 
     if (!$klassekode || !$klassenavn || !$studiumkode) 
 	{
-        print("Alle felt må fylles ut");
+        print("Alle felt m&aring; fylles ut");
     }
 	else 
 	{
@@ -41,15 +41,15 @@ if (isset($_POST["registrerklasseknapp"]))
 		{	
     include("dbtilkobling.php");
 
-        /* tilkobling til database-serveren utført og valg av database foretatt */
+        /* tilkobling til database-serveren utf&oslash;rt og valg av database foretatt */
 
         $sqlSetning = "SELECT * FROM klasse WHERE klassekode='$klassekode';";
         $sqlResultat = mysqli_query($db,$sqlSetning) or die("ikke mulig &aring; hente data fra databasen");
         $antallRader = mysqli_num_rows($sqlResultat);
 		
-        if ($antallRader != 0) /* Denne klassen er registrert fra før */ 
+        if ($antallRader != 0) /* Denne klassen er registrert fra f&oslash;r */ 
 		{
-            print("Klassen er registrert fra f&oslashr");
+            print("Klassen er registrert fra f&oslash;r");
 		} 
 		else 
 		{
@@ -65,3 +65,4 @@ if (isset($_POST["registrerklasseknapp"]))
 }
 include("slutt.html");
 ?>
+
