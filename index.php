@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Title of the document</title>
+<title>Obligatorisk oppgave 2</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
