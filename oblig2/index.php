@@ -1,19 +1,20 @@
 body {
-  background-color: #e6f0ff; /* very light blue background */
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #333;
+  background-color: #f0fff4; /* pale mint background */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #2d3436;
 }
 
 h1 {
-  color: #003366;           /* dark navy blue title */
+  color: #2e7d32;           /* dark green title */
   text-align: center;
   margin-top: 40px;
 }
 
 footer {
-  color: #666;
+  color: #4caf50;
   text-align: center;
   margin-top: 40px;
   font-size: 0.9em;
 }
+
 
