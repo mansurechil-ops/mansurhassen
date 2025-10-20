@@ -15,18 +15,6 @@
     </header>
 
     <nav>
-
-    <?php
-      $tema01Base = getenv('TEMA01_URL') ?: 'tema01';
-      $tema03Base = getenv('TEMA03_URL') ?: 'tema03';
-      function baseJoin($base, $path) {
-        $base = rtrim($base, '/');
-        $path = ltrim($path, '/');
-        return $base . '/' . $path;
-      }
-    ?>
-
-    
       <h5>KLASSER</h5>
       <p><a href="registrerklasse.php">Registrer klasse</a></p>
       <p><a href="visalleklasser.php">Vis alle klasser</a></p>
@@ -35,13 +23,6 @@
       <p><a href="registrerstudent.php">Registrer student</a></p>
       <p><a href="visallestudenter.php">Vis alle studenter</a></p>
       <p><a href="slettstudent.php">Slett student</a></p>
-
-      <h5>Oppgaver (separate apper)</h5>
-      <p><a href="<?php echo baseJoin($tema01Base, '0101.html');?>">Tema 1 – Oppgave 1</a></p>
-      <p><a href="<?php echo baseJoin($tema01Base, '0102.html');?>">Tema 1 – Oppgave 2</a></p>
-      <p><a href="<?php echo baseJoin($tema01Base, '0103.html');?>">Tema 1 – Oppgave 3</a></p>
-      <p><a href="<?php echo baseJoin($tema03Base, 'eksempel.html');?>">Tema 3 – Eksempel 1</a></p>
-      <p><a href="<?php echo baseJoin($tema03Base, 'eksempel2.html');?>">Tema 3 – Eksempel 2</a></p>
 
 	  
      </nav>
