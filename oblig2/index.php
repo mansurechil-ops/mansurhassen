@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Title of the document</title>
-</head>
+body {
+  background-color: #e6f0ff; /* very light blue background */
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+}
 
-<body>
-<?php
-include("start.html");
-include("slutt.html");
-?> 
-</body>
+h1 {
+  color: #003366;           /* dark navy blue title */
+  text-align: center;
+  margin-top: 40px;
+}
 
-</html>
+footer {
+  color: #666;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
